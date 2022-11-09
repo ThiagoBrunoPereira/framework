@@ -16,13 +16,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: 🐈 Yarn
+      - name: Yarn
         run: yarn install --frozen-lockfile --ignore-engines --non-interactive --silent
 
       - name: Build
         run: yarn --ignore-engines --non-interactive --silent docs:build
-        env:
-          NODE_OPTIONS: --max_old_space_size=1024
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
