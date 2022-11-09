@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: 16
 
+      - name: 🐈 Yarn
+        run: yarn install --frozen-lockfile --ignore-engines --non-interactive --silent
+
       - name: Build
         run: yarn --ignore-engines --non-interactive --silent docs:build
         env:
