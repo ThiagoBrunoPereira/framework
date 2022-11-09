@@ -10,6 +10,10 @@
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
+  "engines": {
+    "node": ">=16",
+    "yarn": "^1.22"
+  },
   "dependencies": {
     "vue": "^3.2.43"
   },
