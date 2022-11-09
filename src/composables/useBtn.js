@@ -128,7 +128,7 @@ export default function (props) {
           props.textColor || props.color
         }`;
       } else {
-        colors = `bg-${props.color} text-${props.textColor || 'white'}`;
+        colors = `x-btn-${props.color} text-${props.textColor || 'white'}`;
       }
     } else if (props.textColor) {
       colors = `text-${props.textColor}`;
