@@ -10,13 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: yarn
+      - run: yarn install --frozen-lockfile --ignore-engines --non-interactive --silent
 
       - name: Build
-        run: yarn docs:build
+        run: yarn --ignore-engines --non-interactive --silent docs:build
+        env:
+          NODE_OPTIONS: --max_old_space_size=1024
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
